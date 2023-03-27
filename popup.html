@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      body {
-        width: 300px;
-        font-family: Arial, sans-serif;
-      }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenAI GPT API Integration</title>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
   </head>
   <body>
-    <h1>OpenAI API Key</h1>
-    <form id="api-key-form">
-      <input
-        type="text"
-        id="api-key-input"
-        placeholder="Enter your OpenAI API key"
-      />
-      <button id="save-api-key">Save</button>
-    </form>
+    <div class="popup">
+      <h1>OpenAI API Key</h1>
+      <form id="api-key-form">
+        <label for="api-key-input">Enter your OpenAI API key:</label>
+        <input type="text" id="api-key-input" />
+        <button id="save-api-key">Save</button>
+      </form>
+      <div id="error-message"></div>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>
