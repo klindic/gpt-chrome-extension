@@ -88,8 +88,10 @@ function attachKeydownListener(element) {
           activeElement.tagName === "TEXTAREA")
       ) {
         inputText = activeElement.value;
+        activeElement.value = "typing...";
       } else if (activeElement && isEditable(activeElement)) {
         inputText = activeElement.innerHTML;
+        activeElement.innerHTML = "typing...";
       }
 
       if (inputText) {
