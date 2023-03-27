@@ -74,6 +74,8 @@ function isEditable(element) {
 }
 
 function attachKeydownListener(element) {
+  const typingPlaceholder = "$gpt typing...";
+
   element.addEventListener("keydown", async (event) => {
     if (
       event.ctrlKey &&
@@ -88,22 +90,38 @@ function attachKeydownListener(element) {
           activeElement.tagName === "TEXTAREA")
       ) {
         inputText = activeElement.value;
-        activeElement.value = "typing...";
       } else if (activeElement && isEditable(activeElement)) {
         inputText = activeElement.innerHTML;
-        activeElement.innerHTML = "typing...";
       }
 
       if (inputText) {
         const extractedText = extractText(inputText);
 
         if (extractedText) {
+          if (isEditable(activeElement)) {
+            activeElement.innerHTML = activeElement.innerHTML.replace(
+              inputText,
+              typingPlaceholder
+            );
+          } else {
+            activeElement.value = activeElement.value.replace(
+              inputText,
+              typingPlaceholder
+            );
+          }
+
           const responseText = await callOpenAI(extractedText);
           if (responseText) {
             if (isEditable(activeElement)) {
-              activeElement.innerHTML = responseText;
+              activeElement.innerHTML = activeElement.innerHTML.replace(
+                typingPlaceholder,
+                responseText
+              );
             } else {
-              activeElement.value = responseText;
+              activeElement.value = activeElement.value.replace(
+                typingPlaceholder,
+                responseText
+              );
             }
           }
         }
