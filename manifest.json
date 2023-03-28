@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "OpenAI GPT API Integration",
+  "name": "GPTeverywhere",
   "version": "1.0",
-  "description": "Calls OpenAI API for text inputs on websites when ALT key is pressed",
+  "description": "Generate AI-powered text with OpenAI's GPT API in any input field. Type $gpt, your prompt, and press CTRL+ALT to get AI-generated responses.",
   "permissions": ["scripting", "storage", "activeTab"],
   "action": {
     "default_popup": "popup.html",

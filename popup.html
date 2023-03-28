@@ -3,18 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenAI GPT API Integration</title>
+    <title>GPTeverywhere</title>
     <link rel="stylesheet" type="text/css" href="popup.css" />
   </head>
   <body>
     <div class="popup">
-      <h1>OpenAI API Key</h1>
+      <h1>GPTeverywhere</h1>
+      <p>
+        GPTeverywhere is a Chrome extension that brings the power of OpenAI's
+        GPT API to your browsing experience. With this extension, you can
+        generate context-aware text suggestions in any text input field on
+        websites. To use it, simply type <code>$gpt</code> followed by your
+        input text and press CTRL + ALT. The extension will replace your input
+        with an AI-generated response based on your prompt, up to 150 tokens in
+        length.
+      </p>
+      <p>
+        To get started, enter your OpenAI API key in the field below and click
+        "Save". Please note that by using this extension, you agree to the
+        <a href="https://beta.openai.com/terms/" target="_blank"
+          >OpenAI API Terms of Service</a
+        >. The creators of this extension are not responsible for any misuse of
+        the API or any damages resulting from its use.
+      </p>
       <form id="api-key-form">
         <label for="api-key-input">Enter your OpenAI API key:</label>
         <input type="text" id="api-key-input" />
         <button id="save-api-key">Save</button>
       </form>
       <div id="error-message"></div>
+      <p class="rights">© 2023 SOLID. All Rights Reserved.</p>
     </div>
     <script src="popup.js"></script>
   </body>

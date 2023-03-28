@@ -20,6 +20,7 @@ document
               successMessage.textContent = "API key successfully saved!";
               successMessage.style.color = "#4caf50";
               successMessage.style.marginTop = "10px";
+              successMessage.style.textAlign = "center";
               document
                 .getElementById("api-key-form")
                 .appendChild(successMessage);
